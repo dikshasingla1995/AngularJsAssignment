@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class Assignment1Component {
 
+  userInput : string;
+
+  onInputProvided(input : string){
+    this.userInput = input;
+  }
 }

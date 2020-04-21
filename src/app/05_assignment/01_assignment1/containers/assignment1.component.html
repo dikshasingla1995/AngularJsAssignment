@@ -8,6 +8,21 @@
     <li class="list-group-item">Display the result on the page via string interpolation</li>
   </ul>
   <div class="container your-code">
-    <h6>Remove this &lt;h3&gt; and create your HTML here</h6>
+    <div class="card border-success mb-3">
+      <div class="card-header bg-transparent border-success text-center">Input Event Handler</div>
+      <div class="card-body text-success">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Your Input here" #myInput
+            (input)="onInputProvided(myInput.value)">
+        </div>
+        <div class="form-group" *ngIf = "userInput && userInput.length > 0;else noUserInput">
+          <p>Entered Input : {{userInput}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<ng-template #noUserInput>
+  <p>Entered Input : No Input Entered By User</p>
+</ng-template>
